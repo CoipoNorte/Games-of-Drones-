@@ -3,3 +3,6 @@ Fritanga dice: Un corrector de ortografía, compita, no pones ni un acento.
 Agregué aleatoriedad para confundir las estrategias ajenas. Quizá entren en un bucle y no logren tomar zonas.
 
 copo: geitu
+
+
+te descalificaron pq es muy pesado el codigo creo

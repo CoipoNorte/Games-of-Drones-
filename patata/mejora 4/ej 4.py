@@ -118,6 +118,8 @@ while True:
             dx, dy = int(dx / dist * 100), int(dy / dist * 100)
         print(f"{actual[0] + dx} {actual[1] + dy}")
 
-    # Salida de debug (para ver qué está haciendo el código)
-    print(f"Turno {turn}, Zonas: {controlled_zones}", file=sys.stderr, flush=True)
-    print(f"Atacantes: {atacantes}, Defensores: {defensores}", file=sys.stderr, flush=True)
+    # Salida (para ver qué está haciendo el código
+    #print(f"Turno {turn}, Zonas: {controlled_zones}", file=sys.stderr, flush=True)
+    #print(f"Atacantes: {atacantes}, Defensores: {defensores}", file=sys.stderr, flush=True)
+
+    # Coipo: Si bn es util mirar, descubri cque el debugmode de de la misma pag muestra de forma simplificada los movimientos de los drones, deberia quitarlo!
