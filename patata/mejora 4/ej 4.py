@@ -65,13 +65,19 @@ def calculate_target_positions(my_drones, attackers, defenders, controlled_zones
 
     # Asignar los demás atacantes a la mejor zona
     for atacante in attackers[3:]:
-        objetivos[atacante] = find_best_zone(my_drones[atacante], controlled_zones, predicted_enemies, my_drones)
+        objetivo = find_best_zone(my_drones[atacante], controlled_zones, predicted_enemies, my_drones)
+        if objetivo is None:
+            objetivo = (2000, 900)  # Si no hay una zona mejor, ir al centro del mapa
+        objetivos[atacante] = objetivo
 
     # Los defensores se quedan en las zonas controladas más cercanas
     for defensor in defenders:
-        zona_mas_cercana = min((zona for zona, controlador in enumerate(controlled_zones) if controlador == _id),
-                               key=lambda i: distance(my_drones[defensor][0], my_drones[defensor][1], zones[i][0], zones[i][1]))
-        objetivos[defensor] = zones[zona_mas_cercana]
+        zonas_controladas = [i for i, controlador in enumerate(controlled_zones) if controlador == _id]
+        if zonas_controladas:
+            zona_mas_cercana = min(zonas_controladas, key=lambda i: distance(my_drones[defensor][0], my_drones[defensor][1], zones[i][0], zones[i][1]))
+            objetivos[defensor] = zones[zona_mas_cercana]
+        else:
+            objetivos[defensor] = (2000, 900)  # Ir al centro del mapa si no hay zonas controladas
 
     # Añadir un poco de aleatoriedad para confundir al enemigo
     if len(my_drones) > 5 and random.random() < 0.1:
@@ -118,8 +124,8 @@ while True:
             dx, dy = int(dx / dist * 100), int(dy / dist * 100)
         print(f"{actual[0] + dx} {actual[1] + dy}")
 
-    # Salida (para ver qué está haciendo el código
-    #print(f"Turno {turn}, Zonas: {controlled_zones}", file=sys.stderr, flush=True)
-    #print(f"Atacantes: {atacantes}, Defensores: {defensores}", file=sys.stderr, flush=True)
+    # Debug: Si necesitas ver qué está haciendo el código, descomenta las siguientes líneas
+    # print(f"Turno {turn}, Zonas: {controlled_zones}", file=sys.stderr, flush=True)
+    # print(f"Atacantes: {atacantes}, Defensores: {defensores}", file=sys.stderr, flush=True)
 
-    # Coipo: Si bn es util mirar, descubri cque el debugmode de de la misma pag muestra de forma simplificada los movimientos de los drones, deberia quitarlo!
+    # Coipo: Si bien es útil mirar, descubrí que el modo debug de la misma página muestra de forma simplificada los movimientos de los drones, ¡debería quitarlo!
