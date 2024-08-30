@@ -1,0 +1,20 @@
+NOTA N_MORDIDA
+caxate esa 
+
+Formacion Tactica Ahora, 3 drones se mueven en formacion de triangulo, como aviones de guerra
+
+Prediccion de Movimientos Enemigos Se guarda la posicion anterior de los enemigos y se predice su proximo movimiento
+
+Cambio entre Atacantes y Defensores Al principio, mas drones atacan; hacia el final del juego, se envian mas drones a defender
+
+Senalamiento Se envia un dron a un lugar aleatorio para confundir al enemigo
+
+Seleccion de Zonas Mejorada Se prioriza la asignacion a zonas libres en lugar de las ya controladas
+
+pero cuando lo probe no ganamos aunque no se si sea pq nos promobieron de lega sengun la pag, aunque no le entndi nasa
+
+
+
+
+
+nota coipo, entonces podemos meora no? osea esto da lo de fritanga peo pero, si perdemos es pq los demas tmb tienen estrategas buena y cosas similares, he notado que muchas veces la pos ini inpacta dado que las primeras comprobacionas dan ms de ventajas, quiza optimizar so es la calve para el 1#

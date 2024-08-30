@@ -1,0 +1,39 @@
+Mejoras POR implementar:
+
+Roles de drones:
+"atacantes"
+"defensores"
+
+Los defensores se quedan cerca de las zonas que ya controlamos.
+Atacantes buscan nuevas zonas para conquistar.
+
+Puntuacion de zonas:
+
+Priorizamos zonas no controladas.
+Penalizamos zonas que ya controlamos para evitar que todos los drones se amontonen en una sola zona.
+Consideramos la presencia tanto de aliados como de enemigos en la zona.
+
+Comportamiento defensivo:
+
+Los drones defensores se mueven hacia la zona controlada mais cercana para protegerla.
+
+
+Distribución mais inteligente:
+
+Al considerar la presencia de aliados en la puntuacion de zonas, los drones se distribuiran de manera mas eficiente entre las zonas objetivo.
+
+
+Adaptabilidad:
+
+La estrategia se adapta dinámicamente al estado del juego,
+cambiando entre comportamientos ofensivos y defensivos segun sea necesario.
+
+
+
+IDEAS DE FRITANGA!!
+
+Implementar formaciones tActicas para grupos de drones.¿Alo alejandromagno?
+Predecir movimientos enemigos basados en patrones observados???COMO?
+Ajustar dinmicamente la proporcion de atacantes y defensores segun el estado del juego.?Nisiquiera se como bro
+Implementar comportamientos de "señuelo" para distraer a los drones enemigos.¿Me tientas me tientas?
+

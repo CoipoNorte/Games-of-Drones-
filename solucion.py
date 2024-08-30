@@ -1,18 +1,18 @@
 import sys
 import math
 
-# Leemos los datos de inicialización
+# Datos de iniciales señore
 p, _id, d, z = [int(i) for i in input().split()]
 zones = []
 for i in range(z):
     x, y = [int(j) for j in input().split()]
     zones.append((x, y))
 
-# Función para calcular la distancia entre dos puntos
+# Calcular la distancia entre dos puntos (sqrt: )
 def distance(x1, y1, x2, y2):
     return math.sqrt((x1 - x2)**2 + (y1 - y2)**2)
 
-# Función para encontrar la zona más cercana no controlada o controlada por un enemigo
+# Zona mas cercana no controlada / controlada por un enemigo
 def find_best_zone(drone, controlled_zones, enemy_drones):
     best_zone = None
     best_score = float('inf')
@@ -28,7 +28,7 @@ def find_best_zone(drone, controlled_zones, enemy_drones):
                 best_zone = zone
     return best_zone
 
-# game loop
+# Esto era el gameloop pero me gusta pensar que es el main
 while True:
     controlled_zones = []
     for i in range(z):
@@ -44,14 +44,14 @@ while True:
     my_drones = drones[_id]
     enemy_drones = [drone for i, team in enumerate(drones) if i != _id for drone in team]
     
-    # Asignamos objetivos a cada dron
+    # Asignar -> objetivo a dron
     targets = {}
     for i, drone in enumerate(my_drones):
         best_zone = find_best_zone(drone, controlled_zones, enemy_drones)
         if best_zone:
             targets[i] = best_zone
     
-    # Movemos los drones hacia sus objetivos
+    # Mover -> drones a objetivo
     for i in range(d):
         if i in targets:
             target = targets[i]
@@ -64,8 +64,8 @@ while True:
                 dy = int(dy / dist * 100)
             print(f"{current[0] + dx} {current[1] + dy}")
         else:
-            # Si no hay objetivo, movemos el dron hacia el centro
+            # Movemos dron a centro
             print("2000 900")
     
-    print("Debug: Controlled zones:", controlled_zones, file=sys.stderr, flush=True)
-    print("Debug: Targets:", targets, file=sys.stderr, flush=True)
+    print("VARIABLE: controlled_zones:", controlled_zones, file=sys.stderr, flush=True)
+    print("VARIABLE: targets:", targets, file=sys.stderr, flush=True)
