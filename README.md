@@ -1,11 +1,8 @@
-Aquí te dejo el Markdown con la explicación detallada del código que implementa una estrategia para el juego "Games of Drones":
+# Game of Drones
 
-```markdown
-# Games-of-Drones
+Solución para el juego de game of drones de Coding Games en el que el objetivo es controlar zonas en un mapa utilizando drones. Cada jugador dirige varios drones para capturar y mantener el control de las zonas.
 
-Este código implementa una solución para un juego en el que el objetivo es controlar zonas en un mapa utilizando drones. El juego se desarrolla por turnos, y cada jugador dirige varios drones para capturar y mantener el control de las zonas. A continuación, se explica el código y su funcionamiento en detalle.
-
-## 1. Lectura de Datos Iniciales
+## 1. Lectura de Datos
 
 ```python
 p, _id, d, z = [int(i) for i in input().split()]
@@ -29,7 +26,7 @@ def distance(x1, y1, x2, y2):
     return math.sqrt((x1 - x2)**2 + (y1 - y2)**2)
 ```
 
-Esta función calcula la distancia euclidiana entre dos puntos `(x1, y1)` y `(x2, y2)`. Es útil para determinar qué tan lejos están los drones de las zonas y entre ellos.
+Esta función calcula la distancia euclidiana entre dos puntos `(x1, y1)` y `(x2, y2)`.
 
 ## 3. Función para Buscar la Mejor Zona
 
@@ -62,7 +59,7 @@ Esta función evalúa las zonas y determina cuál es la mejor para que un dron s
 - **Número de enemigos y aliados** cerca de la zona.
 - **Estado de control** de la zona (controlada, disputada, libre).
 
-La zona con la puntuación más baja (`best_score`) se considera la mejor zona para atacar o defender.
+La zona con la puntuación más baja (`best_score`) se considera la mejor zona para atacar o defender uwu.
 
 ## 4. Asignación de Roles (Atacantes y Defensores)
 
@@ -132,20 +129,13 @@ while True:
     print(f"Atacantes: {attackers}, Defensores: {defenders}", file=sys.stderr, flush=True)
 ```
 
-Este ciclo se repite en cada turno del juego:
+Este ciclo se repite en cada turno del juego **( basado en el codigo base )** :
 
 - **Lectura del Estado Actual**: Se determina qué zonas están controladas y las posiciones de todos los drones.
 - **Asignación de Roles**: Se decide qué drones serán atacantes y cuáles defensores.
 - **Determinación de Objetivos**: Para cada dron, se decide hacia qué zona debe moverse.
 - **Movimiento de Drones**: Se calculan y emiten las nuevas coordenadas de los drones.
-- **Depuración**: Se imprimen mensajes en la consola de errores (`sys.stderr`) para ayudar a monitorizar el estado del juego y las decisiones del algoritmo.
+- **Depuración**: Se imprimen mensajes en la consola de errores (`sys.stderr`) para ayudar a monitorizar el estado del juego y las decisiones del algoritmo **( util aunque no lo paresca ;3 )**.
 
-Este código es un ejemplo de cómo manejar la lógica de control de drones en un juego de estrategia por turnos, utilizando funciones bien definidas para evaluar el entorno y tomar decisiones optimizadas en cada turno.
-``` 
-
-Esta versión debería proporcionar una explicación clara y detallada del funcionamiento del código, estructurada en un formato de Markdown para facilitar la lectura y comprensión.
-5. **Captura de Pantalla mi gente**
-## Imagen de la pag
-
+## Captura Señores
 ![Estrategia de Control de Zonas](gameofdrones.png)
-
